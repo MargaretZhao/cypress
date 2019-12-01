@@ -1,2 +1,0 @@
-# cypress
-automation test code
