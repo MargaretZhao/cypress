@@ -4,20 +4,22 @@ describe('Verify Eligibility Page of Grant Application Form', function () {
     before(function () {
         cy.loginPortal()
         cy.loginCorpPass()
-        cy.wait(25000)
+        cy.get('.col-sm-12.col-md-4', { timeout: 50000 })
+        .should('contain', 'Get new grant')
+
         cy.contains('Apply for a grant to support your project')
             .click({ force: true })
-        cy.wait(5000)
+
         cy.get('[type="radio"]').check('IT')
-        cy.wait(5000)
+
         cy.contains('Bring my business overseas or establish a stronger international presence')
             .click({ force: true })
-        cy.wait(5000)
+
         cy.contains('Market Readiness Assistance')
             .click({ force: true })
         cy.contains('Apply')
             .click({ force: true })
-        cy.wait(5000)
+
         cy.contains('Proceed')
             .click({ force: true })
 
