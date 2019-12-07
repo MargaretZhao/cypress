@@ -1,0 +1,166 @@
+Margarets-MacBook-Pro:govtech margaretzhao$ ./node_modules/.bin/cypress run --record --key 41d1d94a-c0d8-4401-9528-a9c1b94fbb81
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:    3.6.1                                                                              │
+  │ Browser:    Electron 73 (headless)                                                             │
+  │ Specs:      3 found (MRA/contact_details_spec.js, MRA/eligibility_spec.js, MRA/form_submission │
+  │             _spec.js)                                                                          │
+  │ Params:     Group: false, Parallel: false                                                      │
+  │ Run URL:    https://dashboard.cypress.io/projects/mvksbx/runs/5                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  MRA/contact_details_spec.js                                                     (1 of 3)
+  Estimated: 1 minute, 2 seconds
+
+
+  Verify Contact Details of Grant Application Form
+    ✓ Verify Contact Details page lay out (56981ms)
+    ✓ Verify Main Contact Person Section (337ms)
+    ✓ Verify Letter of Offer Addressee Section (204ms)
+    ✓ Fill in Main Contact Person Section and Save (2406ms)
+    ✓ Load Letter Of Offer Addressee same as Main Contact Person (262ms)
+
+
+  5 passing (1m)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 minute, 1 second                                                               │
+  │ Estimated:    1 minute, 2 seconds                                                              │
+  │ Spec Ran:     MRA/contact_details_spec.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: /Users/margaretzhao/govtech/cypress/videos/MRA/contact_deta    (4 seconds)
+                          ils_spec.js.mp4                                                           
+
+
+  (Uploading Results)
+
+  - Done Uploading (1/1) /Users/margaretzhao/govtech/cypress/videos/MRA/contact_details_spec.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  MRA/eligibility_spec.js                                                         (2 of 3)
+  Estimated: 1 minute, 4 seconds
+
+
+  Verify Eligibility Page of Grant Application Form
+    ✓ Verify Eligibility page lay out (50157ms)
+    ✓ Verify all buttons could be clicked (1614ms)
+    ✓ Click all Yes then save (518ms)
+
+
+  3 passing (53s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     53 seconds                                                                       │
+  │ Estimated:    1 minute, 4 seconds                                                              │
+  │ Spec Ran:     MRA/eligibility_spec.js                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: /Users/margaretzhao/govtech/cypress/videos/MRA/eligibility_    (3 seconds)
+                          spec.js.mp4                                                               
+
+
+  (Uploading Results)
+
+  - Done Uploading (1/1) /Users/margaretzhao/govtech/cypress/videos/MRA/eligibility_spec.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  MRA/form_submission_spec.js                                                     (3 of 3)
+  Estimated: 1 minute, 0 seconds
+
+
+  Verify Form Submission Page of Grant Application Form
+    ✓ Verify Form Submission page lay out (55428ms)
+    ✓ Click all No and Save (1659ms)
+    ✓ Click certain Yes and fill in details (505ms)
+    ✓ Submit and check result (40ms)
+
+
+  4 passing (59s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     58 seconds                                                                       │
+  │ Estimated:    1 minute, 0 seconds                                                              │
+  │ Spec Ran:     MRA/form_submission_spec.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF                                                     
+  -  Finished processing: /Users/margaretzhao/govtech/cypress/videos/MRA/form_submiss    (8 seconds)
+                          ion_spec.js.mp4                                                           
+
+
+  (Uploading Results)
+
+  - Done Uploading (1/1) /Users/margaretzhao/govtech/cypress/videos/MRA/form_submission_spec.js.mp4
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  MRA/contact_details_spec.js              01:01        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  MRA/eligibility_spec.js                  00:53        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  MRA/form_submission_spec.js              00:58        4        4        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        02:53       12       12        -        -        -  
+
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+  Recorded Run: https://dashboard.cypress.io/projects/mvksbx/runs/5                                    
+
+Margarets-MacBook-Pro:govtech margaretzhao$ 

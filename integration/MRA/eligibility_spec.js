@@ -1,28 +1,23 @@
 describe('Verify Eligibility Page of Grant Application Form', function () {
 
-    //beforeEach(function(){
     before(function () {
         cy.loginPortal()
         cy.loginCorpPass()
         cy.get('.col-sm-12.col-md-4', { timeout: 50000 })
-        .should('contain', 'Get new grant')
-
+            .should('contain', 'Get new grant')
         cy.contains('Apply for a grant to support your project')
             .click({ force: true })
-
         cy.get('[type="radio"]').check('IT')
-
         cy.contains('Bring my business overseas or establish a stronger international presence')
             .click({ force: true })
-
         cy.contains('Market Readiness Assistance')
             .click({ force: true })
         cy.contains('Apply')
             .click({ force: true })
-
         cy.contains('Proceed')
             .click({ force: true })
-
+        cy.contains('Eligibility')
+            .click({ force: true })
     })
 
     it('Verify Eligibility page lay out', () => {
@@ -34,22 +29,10 @@ describe('Verify Eligibility Page of Grant Application Form', function () {
     })
 
     it('Verify all buttons could be clicked', () => {
-        cy.get('.form-horizontal:nth-child(5) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-eligibility-sg_registered_check-true').click();
-        cy.get('.form-horizontal:nth-child(5) .bgp-radio:nth-child(2) > .radiobutton').click();
-        cy.get('#react-eligibility-sg_registered_check-false').click();
-        cy.get('.form-horizontal:nth-child(7) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-eligibility-turnover_check-true').click();
-        cy.get('.form-horizontal:nth-child(7) .bgp-radio:nth-child(2) > .radiobutton').click();
-        cy.get('#react-eligibility-turnover_check-false').click();
-        cy.get('.form-horizontal:nth-child(9) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-eligibility-global_hq_check-true').click();
-        cy.get('.form-horizontal:nth-child(9) .bgp-radio:nth-child(2) > .radiobutton').click();
-        cy.get('#react-eligibility-global_hq_check-false').click();
-        cy.get('.form-horizontal:nth-child(11) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-eligibility-started_project_check-true').click();
-        cy.get('.form-horizontal:nth-child(11) .bgp-radio:nth-child(2) > .radiobutton').click();
-        cy.get('#react-eligibility-started_project_check-false').click();
+        cy.get('.bgp-radio')
+            .each(($btn) => {
+                cy.get($btn).click()
+            })
     })
 
     it('Click all Yes then save', () => {
@@ -61,7 +44,6 @@ describe('Verify Eligibility Page of Grant Application Form', function () {
                     cy.get($btn).click()
                 }
             })
-
         cy.get('.bgp-btn-save')
             .click()
     })

@@ -1,11 +1,10 @@
 describe('Verify Contact Details of Grant Application Form', function () {
 
-    //beforeEach(function(){
     before(function () {
         cy.loginPortal()
         cy.loginCorpPass()
         cy.get('.col-sm-12.col-md-4', { timeout: 50000 })
-        .should('contain', 'Get new grant')
+            .should('contain', 'Get new grant')
         cy.contains('Apply for a grant to support your project')
             .click({ force: true })
         cy.get('[type="radio"]').check('IT')
@@ -57,7 +56,6 @@ describe('Verify Contact Details of Grant Application Form', function () {
             .type('test2@gmail.com')
         cy.contains('Same as registered address in Company Profile')
             .click({ force: true })
-
         cy.get('.bgp-btn-save')
             .click()
     })
@@ -65,19 +63,15 @@ describe('Verify Contact Details of Grant Application Form', function () {
     it('Load Letter Of Offer Addressee same as Main Contact Person', () => {
         cy.contains('Same as main contact person')
             .click({ force: true })
-
         cy.get('[id="react-contact_info-name"]').invoke('val').then(contactName => {
             cy.get('[id="react-contact_info-offeree_name"]').should('have.value', contactName)
         })
-
         cy.get('[id="react-contact_info-designation"]').invoke('val').then(contactDes => {
             cy.get('[id="react-contact_info-offeree_designation"]').should('have.value', contactDes)
         })
-
         cy.get('[id="react-contact_info-primary_email"]').invoke('val').then(contactEmail => {
             cy.get('[id="react-contact_info-offeree_email"]').should('have.value', contactEmail)
         })
-
         cy.get('.bgp-btn-save')
             .click()
     })

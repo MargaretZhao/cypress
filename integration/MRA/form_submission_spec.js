@@ -1,11 +1,10 @@
 describe('Verify Form Submission Page of Grant Application Form', function () {
 
-    //beforeEach(function(){
     before(function () {
         cy.loginPortal()
         cy.loginCorpPass()
         cy.get('.col-sm-12.col-md-4', { timeout: 50000 })
-        .should('contain', 'Get new grant')
+            .should('contain', 'Get new grant')
         cy.contains('Apply for a grant to support your project')
             .click({ force: true })
         cy.get('[type="radio"]').check('IT')
@@ -37,22 +36,16 @@ describe('Verify Form Submission Page of Grant Application Form', function () {
     })
 
     it('Click all No and Save', () => {
-        cy.get('.form-horizontal:nth-child(1) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-criminal_liability_check-false').click();
-        cy.get('.form-horizontal:nth-child(2) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-civil_proceeding_check-false').click();
-        cy.get('.form-horizontal:nth-child(3) .bgp-radio:nth-child(1)').click();
-        cy.get('#react-declaration-insolvency_proceeding_check-false').click();
-        cy.get('.form-horizontal:nth-child(4) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-project_incentives_check-false').click();
-        cy.get('.form-horizontal:nth-child(5) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-other_incentives_check-false').click();
-        cy.get('.form-horizontal:nth-child(6) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-project_commence_check-false').click();
-        cy.get('.form-horizontal:nth-child(7) .bgp-radio:nth-child(1) > .radiobutton').click();
-        cy.get('#react-declaration-related_party_check-false').click();
-        cy.get('#react-declaration-consent_acknowledgement_check').click();
-        cy.get('#save-btn').click();
+        cy.get('.bgp-radio')
+            .each(($btn) => {
+                const text = $btn.text()
+                const yesButton = text.includes('No')
+                if (yesButton) {
+                    cy.get($btn).click()
+                }
+            })
+        cy.get('.bgp-btn-save')
+            .click()
     })
 
     it('Click certain Yes and fill in details', () => {
@@ -62,10 +55,5 @@ describe('Verify Form Submission Page of Grant Application Form', function () {
         cy.get('#save-btn').click();
         cy.get('#react-declaration-civil_proceeding_remarks').should('have.value', 'test')
     })
-
-    it('Submit and check result', () => {
-        //TBD, need to fill in all other form first
-    })
-
 
 })

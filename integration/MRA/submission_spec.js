@@ -45,8 +45,25 @@ describe('Verify Review and Submit Grant Application Form', function () {
             .click({ force: true })
 
         cy.get('.bgp-sidebar', { timeout: 50000 })
-        .should('contain','Company Profile')
+            .should('contain', 'Company Profile')
 
+        //eligibility section
+        cy.get('[id="eligibility"]')
+            .should('not.contain.text', 'No')
+
+        //proposal section
+        cy.get('[id="project"]')
+            .should('contain', Cypress.env('projectTitle'))
+            .and('contain', Cypress.env('projectDescription'))
+
+        //business impact section
+        cy.get('[id="project_impact"]')
+            .should('contain', Cypress.env('rationaleRemarks'))
+            .and('contain', Cypress.env('benefitsRemarks'))
+
+        //cost section
+        cy.get('[id="project_cost"]')
+            .should('contain', Cypress.env('fileName'))
 
     })
 
